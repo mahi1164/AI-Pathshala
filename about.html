@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Pathshala Jashpur</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Poppins', Arial, sans-serif;
+      scroll-behavior: smooth;
+      overflow: hidden;
+    }
+
+    .container {
+      height: 100vh;
+      overflow-y: scroll;
+    }
+
+    .section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+   /* Background Styling for Each Section with Images */
+.section:nth-child(1) {
+  background: url("Background.gif") center/cover no-repeat fixed;
+  
+}
+
+.section:nth-child(2) {
+  background: url("Background.gif") center/cover no-repeat fixed;
+ 
+}
+
+.section:nth-child(3) {
+  background: url("Background.gif") center/cover no-repeat fixed;
+  
+}
+
+.section:nth-child(4) {
+  background: url("Background.gif") center/cover no-repeat fixed;
+  
+}
+
+/* Shared Animation for Smooth Fading */
+@keyframes fadeInBg {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      margin-left: 6ch;
+      margin-right: 6ch;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: #fff;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #333;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    .hidden-text {
+      display: none;
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      transition: max-height 0.5s ease-in-out, opacity 0.5s ease;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    .hidden-text.show {
+      display: block;
+      max-height: 200px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Section 1 -->
+    <div class="section">
+      <h1>Our Story</h1>
+      <p>Discover how AI Pathshala Jashpur began empowering students and educators with AI knowledge.</p>
+      <button onclick="toggleText('hiddenText1')">Learn More</button>
+      <div id="hiddenText1" class="hidden-text">
+        <p>
+          AI Pathshala Jashpur was founded with the vision to bridge the digital divide and prepare the youth of Jashpur for a tech-driven future.
+          We are committed to fostering a culture of innovation through accessible education and skill development in AI and related fields.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <h1>Our Mission</h1>
+      <p>To empower the students, teachers, and youth of Jashpur district with cutting-edge knowledge in Artificial Intelligence, Prompting, ChatGPT, and emerging technologies, fostering a culture of innovation and digital literacy. AI Pathshala Jashpur aims to bridge the technological divide in rural areas, enhance employability, and create a sustainable ecosystem of learning and skill development. By providing accessible, hands-on training and resources, the initiative strives to nurture future-ready individuals who can contribute meaningfully to the nation’s progress.</p>
+      <button onclick="openGoogleForm()">Join Us</button>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <h1>Programs</h1>
+      <p>To establish Jashpur as a hub of innovation and digital excellence by nurturing a generation of technologically skilled individuals proficient in Artificial Intelligence, Prompting, ChatGpt, and emerging technologies. The vision is to create an inclusive and forward-thinking community where students, educators, and professionals collaborate to solve real-world problems, drive socioeconomic growth, and position Jashpur as a leader in the global AI revolution.</p>
+      <button onclick="redirectToPrograms()">Explore Programs</button>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <h1>Coming Soon</h1>
+      <p>AI Labs: A space to learn, experiment, and innovate with cutting-edge AI tools.</p>
+      <button onclick="openGoogleForm()">Stay Updated</button>
+    </div>
+  </div>
+
+  <script>
+    // Intersection Observer for Section Animation
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Toggle hidden text
+    function toggleText(id) {
+      const text = document.getElementById(id);
+      text.classList.toggle('show');
+    }
+
+    // Open Google Form
+    function openGoogleForm() {
+      window.open("https://forms.gle/9K6MYxxqn54cEYCN9", "_blank");
+    }
+
+    // Redirect to events page
+    function redirectToPrograms() {
+      window.location.href = "events.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - AI Pathshala Jashpur</title>
+  <style>
+    /* General Styles */
+    
+    /* Body Styles */
+    body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url("Background.gif") center/cover no-repeat fixed;
+  color: #ffffff;
+}
+
+/* Fade-In Animation for GIF */
+@keyframes fadeInBg {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+    /* Header */
+    header {
+      background-color: #9e5fad;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* Main Content */
+    .content {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .contact-info {
+      margin: 20px 0;
+      animation: slideInUp 1s ease-in-out;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    .contact-info p strong {
+      color: #faf9fd;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #9e5fad;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: #7e6dcc;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #9e5fad;
+      color: #fff;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffcc80;
+      text-decoration: none;
+      margin: 0 5px;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .content h1 {
+        font-size: 2rem;
+      }
+
+      .contact-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>Contact Us</header>
+
+  <!-- Content Section -->
+  <div class="content">
+    <h1>Let’s Connect!</h1>
+    <p>Have questions or want to know more about our programs? Reach out to us!</p>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:contact@aipathshalajashpur.com" id="email-link">contact@aipathshalajashpur.com</a></p>
+      <p><strong>Phone:</strong> <span id="phone-number">+91 XXXXXXXXXX</span></p>
+      <p><strong>Address:</strong> AI Pathshala Jashpur, XYZ Road, Jashpur, Chhattisgarh</p>
+    </div>
+
+    <a href="mailto:contact@aipathshalajashpur.com" class="contact-btn">Contact Us</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AI Pathshala Jashpur. All Rights Reserved.</p>
+    <p>Follow Us: 
+      <a href="https://www.facebook.com/maytreeschool" target="_blank">Facebook</a> | 
+      <a href="https://twitter.com/innovatorrohit" target="_blank">Twitter</a> | 
+      <a href="https://www.linkedin.com/company/maytree-school-of-entrepreneurship?trk=profile-position" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script>
+    // Dynamic Effects for Email Hover
+    const emailLink = document.getElementById('email-link');
+    emailLink.addEventListener('mouseover', () => {
+      emailLink.style.color = '#311b92';
+      emailLink.style.fontWeight = 'bold';
+    });
+    emailLink.addEventListener('mouseout', () => {
+      emailLink.style.color = '';
+      emailLink.style.fontWeight = '';
+    });
+
+    // Simulate Copy-to-Clipboard for Phone Number
+    const phoneNumber = document.getElementById('phone-number');
+    phoneNumber.addEventListener('click', () => {
+      navigator.clipboard.writeText(phoneNumber.textContent)
+        .then(() => {
+          alert('Phone number copied to clipboard!');
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+        });
+    });
+
+    // Display Greeting Based on Time of Day
+    window.onload = function() {
+      const greeting = document.createElement('p');
+      greeting.style.fontSize = '1.2rem';
+      greeting.style.marginTop = '20px';
+
+      const currentHour = new Date().getHours();
+      if (currentHour < 12) {
+        greeting.textContent = 'Good Morning! Let’s make today great.';
+      } else if (currentHour < 18) {
+        greeting.textContent = 'Good Afternoon! How can we assist you today?';
+      } else {
+        greeting.textContent = 'Good Evening! We are here to help.';
+      }
+      document.querySelector('.content').appendChild(greeting);
+    };
+  </script>
+</body>
+</html>
