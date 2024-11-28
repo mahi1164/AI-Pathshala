@@ -253,78 +253,112 @@ body, html {
         max-width: 70px;
       }
     }
-    /* About Us Section Styling */
-.about-us {
-  padding: 40px 20px;
-  justify-content: center;
-  text-align: center;
-  margin-top: 60px;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
+    /* About Us Section */
+    .about-us-section {
+      padding: 60px 20px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      margin-top: 5%;
+    }
 
-.about-us.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.about-us .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #f9f8fa;
-  margin-bottom: 40px;
-}
-.flash-card-container {
-  box-shadow: #dfe6e9;
-  margin-left: 70px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  max-width: 1200px;
-}
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
 
-.flash-card {
-  background: url("Background.gif") no-repeat center center fixed;
+    /* Card Container */
+    .card-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    /* Individual Card Styling */
+    .card {
+      position: absolute;
+      top: 3%;
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 5%;
+      border-width: thick;
+
+      height: 97%;
+      background: url("Background.gif") no-repeat center center fixed;
   background-size: cover;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgb(253, 250, 250);
-  width: 250px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      border-radius: 30px;
+      border-style: solid;
+      box-shadow: 0 4px 10px rgb(255, 255, 255);
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.2rem;
+      opacity: 0;
+      transition: all 0.8s ease-in-out;
+    }
 
-.flash-card h3 {
-  font-size: 1.4rem;
-  color: #fbfafc;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
+    /* Title Style */
+    .card h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-.flash-card p {
-  font-size: 1rem;
-  color: #fdf9f9;
-  line-height: 1.5;
-}
+    /* Navigation Buttons */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-size: 2rem;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
 
-.flash-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
+    .nav-btn.left {
+      left: 10px;
+    }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .flash-card-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .nav-btn.right {
+      right: 10px;
+    }
 
-  .flash-card {
-    width: 80%;
-  }
-}
+    /* Show Active Card */
+    .card.active {
+      left: 0;
+      opacity: 1;
+    }
+
+    /* Left-to-Right Fade-Out */
+    .card.fade-out-left {
+      left: -100%;
+      opacity: 0;
+    }
+
+    /* Right-to-Left Fade-Out */
+    .card.fade-out-right {
+      left: 100%;
+      opacity: 0;
+    }
+
+    /* Left-to-Right Fade-In */
+    .card.fade-in-left {
+      left: 0;
+      opacity: 1;
+    }
+
+    /* Right-to-Left Fade-In */
+    .card.fade-in-right {
+      left: 0;
+      opacity: 1;
+    }
 /* Our Programs Section Styling */
 .programs-section {
   padding: 60px 20px;
@@ -563,35 +597,40 @@ body, html {
     </div>
   </section>
   <!-- About Us Section -->
-<section id="about-us" class="about-us">
-  <h2 class=".about-us section-title">About Us</h2>
-  <div class="flash-card-container">
-    <div class="flash-card">
-      <h3>Our Story</h3>
-      <p>
-        AI Pathshala Jashpur was founded with the vision to bridge the digital divide and prepare the youth of Jashpur for a tech-driven future. We are committed to fostering a culture of innovation through accessible education and skill development in AI and related fields.
-      </p>
+  <section id="about-us" class="about-us-section">
+    <h2>About Us</h2>
+    <p>Swipe through to learn more about us</p>
+
+    <!-- Card Container -->
+    <div class="card-container">
+      <div class="card active">
+        <div class="content">
+          <h3>Our Story</h3>
+          <p>AI Pathshala Jashpur was founded with the vision to bridge the digital divide and prepare the youth of Jashpur for a tech-driven future. We are committed to fostering a culture of innovation through accessible education and skill development in AI and related fields.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <h3>Our Mission</h3>
+          <p>To empower the students, teachers, and youth of Jashpur district with cutting-edge knowledge in Artificial Intelligence, Prompting, ChatGPT, and emerging technologies, fostering a culture of innovation and digital literacy. AI Pathshala Jashpur aims to bridge the technological divide in rural areas, enhance employability, and create a sustainable ecosystem of learning and skill development. By providing accessible, hands-on training and resources, the initiative strives to nurture future-ready individuals who can contribute meaningfully to the nation’s progress.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <h3>Our Values</h3>
+          <p>To establish Jashpur as a hub of innovation and digital excellence by nurturing a generation of technologically skilled individuals proficient in Artificial Intelligence, Prompting, ChatGpt, and emerging technologies. The vision is to create an inclusive and forward-thinking community where students, educators, and professionals collaborate to solve real-world problems, drive socioeconomic growth, and position Jashpur as a leader in the global AI revolution.
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="flash-card">
-      <h3>Our Mission</h3>
-      <p>
-        To empower the students, teachers, and youth of Jashpur district with cutting-edge knowledge in Artificial Intelligence, Prompting, ChatGPT, and emerging technologies, fostering a culture of innovation and digital literacy.
-      </p>
-    </div>
-    <div class="flash-card">
-      <h3>Our Vision</h3>
-      <p>
-        To establish Jashpur as a hub of innovation and digital excellence by nurturing a generation of technologically skilled individuals proficient in Artificial Intelligence, Prompting, ChatGPT, and emerging technologies.
-      </p>
-    </div>
-    <div class="flash-card">
-      <h3>Coming Soon</h3>
-      <p>
-        AI Labs: A space to learn, experiment, and innovate with cutting-edge AI tools.
-      </p>
-    </div>
-  </div>
-</section>
+
+    <!-- Navigation buttons -->
+    <span class="nav-btn left" onclick="navigateCard('left')">&#8592;</span>
+    <span class="nav-btn right" onclick="navigateCard('right')">&#8594;</span>
+  </section>
 
 <!-- Our Programs Section -->
 <section id="our-programs" class="programs-section">
@@ -676,21 +715,45 @@ body, html {
       loop: true,
     });
   </script>
-  <script>
-    
-    // Scroll-triggered animation for About Us section
-    window.addEventListener('scroll', function() {
-      const aboutUsSection = document.querySelector('.about-us');
-      const sectionPosition = aboutUsSection.getBoundingClientRect().top;
-      const viewportHeight = window.innerHeight;
+     <script>
+      let currentIndex = 0;
+      const cards = document.querySelectorAll('.card');
+      const totalCards = cards.length;
   
-      if (sectionPosition < viewportHeight * 0.8) {
-        aboutUsSection.classList.add('visible');
-      } else {
-        aboutUsSection.classList.remove('visible');
+      function navigateCard(direction) {
+        // Get the current and next card based on direction
+        const currentCard = cards[currentIndex];
+        let nextIndex;
+  
+        if (direction === 'right') {
+          nextIndex = (currentIndex + 1) % totalCards; // Wrap to first card if at the end
+        } else if (direction === 'left') {
+          nextIndex = (currentIndex - 1 + totalCards) % totalCards; // Wrap to last card if at the start
+        }
+  
+        const nextCard = cards[nextIndex];
+  
+        // Add fade-out animation to the current card based on direction
+        currentCard.classList.remove('active');
+        currentCard.classList.add(direction === 'right' ? 'fade-out-left' : 'fade-out-right');
+  
+        // Add fade-in animation to the next card after a short delay
+        setTimeout(() => {
+          currentCard.classList.remove('fade-out-left', 'fade-out-right'); // Reset current card animation
+          nextCard.classList.add(direction === 'right' ? 'fade-in-left' : 'fade-in-right'); // Apply fade-in animation
+          nextCard.classList.add('active'); // Mark next card as active
+  
+          // Reset fade-in state of next card after animation
+          setTimeout(() => {
+            nextCard.classList.remove('fade-in-left', 'fade-in-right');
+          }, 800);
+        }, 800);
+  
+        // Update current index
+        currentIndex = nextIndex;
       }
-    });
-  </script>
+    </script>
+  
   <script>
     // Function to detect if an element is in view
     function isInView(element) {
