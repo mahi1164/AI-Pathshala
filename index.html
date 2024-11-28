@@ -6,20 +6,16 @@
   <title>AI Pathshala</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <style>
-    /* General Styling */
-    body {
-      margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
-      color: #2c2c54;
-    }
-    /* Background Styling */
-body {
+    
+
+/* Full-page Background GIF */
+body, html {
   margin: 0;
-  font-family: 'Poppins', Arial, sans-serif;
-  color: #2c2c54;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("Background.gif") center/cover no-repeat fixed;
-  animation: fadeInBg 3s ease-in-out forwards;
+  padding: 0;
+  height: 100%;
+  background: url("Background.gif") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
 }
 
 /* Fade-In Animation for GIF */
@@ -257,6 +253,273 @@ body {
         max-width: 70px;
       }
     }
+    /* About Us Section Styling */
+.about-us {
+  padding: 40px 20px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 60px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-us.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-us .section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f9f8fa;
+  margin-bottom: 40px;
+}
+.flash-card-container {
+  box-shadow: #dfe6e9;
+  margin-left: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.flash-card {
+  background: url("Background.gif") no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgb(253, 250, 250);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flash-card h3 {
+  font-size: 1.4rem;
+  color: #fbfafc;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.flash-card p {
+  font-size: 1rem;
+  color: #fdf9f9;
+  line-height: 1.5;
+}
+
+.flash-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .flash-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flash-card {
+    width: 80%;
+  }
+}
+/* Our Programs Section Styling */
+.programs-section {
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 60px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.programs-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.programs-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f9f8fa;
+  margin-bottom: 10px;
+}
+
+.programs-section .section-subtitle {
+  font-size: 1.2rem;
+  color: #dbd8d8;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* Program Card Styling */
+.programs-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.program-card {
+  background: url("Background.gif") no-repeat center center fixed;
+  background-size: cover;
+  border-radius: 12px;
+  padding: 25px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgb(253, 250, 250);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.program-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.program-card h3 {
+  font-size: 1.5rem;
+  color: #fbfafc;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.program-card p {
+  font-size: 1rem;
+  color: #ffffff;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Hover effect for program cards */
+.program-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .programs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .program-card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Contact Us Section Styling */
+.contact-us-section {
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 60px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .contact-us-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact-us-section h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fbfafc;
+      margin-bottom: 10px;
+    }
+
+    .contact-us-section p {
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    .contact-us-details {
+      font-size: 1.1rem;
+      color: #f8f6f6;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .contact-us-button {
+      background-color: #4a148c;
+      box-shadow: #dfe6e9;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-us-button:hover {
+      background-color: #7b1fa2;
+      cursor: pointer;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+     /* Responsive Design */
+     @media (max-width: 768px) {
+      .content h1 {
+        font-size: 2rem;
+      }
+
+      .contact-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-us-section {
+        padding: 40px 20px;
+      }
+
+      .contact-us-details {
+        font-size: 1rem;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -299,6 +562,75 @@ body {
       <img src="Shri Vishnu Deo Sai Ji.jpeg" alt="Shri Vishnu Deo Sai">
     </div>
   </section>
+  <!-- About Us Section -->
+<section id="about-us" class="about-us">
+  <h2 class=".about-us section-title">About Us</h2>
+  <div class="flash-card-container">
+    <div class="flash-card">
+      <h3>Our Story</h3>
+      <p>
+        AI Pathshala Jashpur was founded with the vision to bridge the digital divide and prepare the youth of Jashpur for a tech-driven future. We are committed to fostering a culture of innovation through accessible education and skill development in AI and related fields.
+      </p>
+    </div>
+    <div class="flash-card">
+      <h3>Our Mission</h3>
+      <p>
+        To empower the students, teachers, and youth of Jashpur district with cutting-edge knowledge in Artificial Intelligence, Prompting, ChatGPT, and emerging technologies, fostering a culture of innovation and digital literacy.
+      </p>
+    </div>
+    <div class="flash-card">
+      <h3>Our Vision</h3>
+      <p>
+        To establish Jashpur as a hub of innovation and digital excellence by nurturing a generation of technologically skilled individuals proficient in Artificial Intelligence, Prompting, ChatGPT, and emerging technologies.
+      </p>
+    </div>
+    <div class="flash-card">
+      <h3>Coming Soon</h3>
+      <p>
+        AI Labs: A space to learn, experiment, and innovate with cutting-edge AI tools.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Our Programs Section -->
+<section id="our-programs" class="programs-section">
+  <h2 class="section-title">Our Programs</h2>
+  <p class="section-subtitle">Learn. Grow. Lead.</p>
+
+  <div class="programs-container">
+    <div class="program-card">
+      <h3>AI for Students</h3>
+      <p>Hands-on AI workshops for school and college students to ignite creativity and problem-solving skills.</p>
+    </div>
+    <div class="program-card">
+      <h3>AI for Educators</h3>
+      <p>Comprehensive training sessions for teachers to integrate AI tools and methodologies into their teaching practices.</p>
+    </div>
+    <div class="program-card">
+      <h3>AI Club</h3>
+      <p>AI Clubs will be created at the school level, where nodal teachers are appointed to train students on the use of AI.</p>
+    </div>
+    <div class="program-card">
+      <h3>AI Labs</h3>
+      <p>Coming Soon</p>
+    </div>
+  </div>
+</section>
+<!-- Contact Us Section -->
+<section id="contact-us" class="contact-us-section">
+  <h2>Contact Us</h2>
+  <p>Let’s Connect!</p>
+  <p>Have questions or want to know more about our programs? Reach out to us!</p>
+  <div class="contact-us-details">
+    <p>Email: <a href="mailto:contact@aipathshalajashpur.com">contact@aipathshalajashpur.com</a></p>
+    <p>Phone: <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
+    <p>Address: AI Pathshala Jashpur, XYZ Road, Jashpur, Chhattisgarh</p>
+  </div>
+  <a href="mailto:contact@aipathshalajashpur.com" class="contact-us-button">Contact Us</a>
+</section>
+
+
 
   <!-- Footer -->
   <footer>
@@ -344,6 +676,76 @@ body {
       loop: true,
     });
   </script>
+  <script>
+    
+    // Scroll-triggered animation for About Us section
+    window.addEventListener('scroll', function() {
+      const aboutUsSection = document.querySelector('.about-us');
+      const sectionPosition = aboutUsSection.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+  
+      if (sectionPosition < viewportHeight * 0.8) {
+        aboutUsSection.classList.add('visible');
+      } else {
+        aboutUsSection.classList.remove('visible');
+      }
+    });
+  </script>
+  <script>
+    // Function to detect if an element is in view
+    function isInView(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.top <= window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Function to add the visible class when the section is in view
+    function revealOnScroll() {
+      const programsSection = document.querySelector('.programs-section');
+      const programCards = document.querySelectorAll('.program-card');
+      
+      // Check if programs section is in view
+      if (isInView(programsSection)) {
+        programsSection.classList.add('visible');
+      }
+
+      // Check if program cards are in view and add visible class to each one
+      programCards.forEach((card, index) => {
+        if (isInView(card)) {
+          card.classList.add('visible');
+        }
+      });
+    }
+
+    // Listen for scroll events to trigger the animations
+    window.addEventListener('scroll', revealOnScroll);
+
+    // Initial check to trigger the animations on page load
+    revealOnScroll();
+  </script>
+  <script>
+    // Function to detect if an element is in view
+    function isInView(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.top <= window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Function to add the visible class when the section is in view
+    function revealOnScroll() {
+      const contactUsSection = document.querySelector('.contact-us-section');
+
+      // Check if contact us section is in view
+      if (isInView(contactUsSection)) {
+        contactUsSection.classList.add('visible');
+      }
+    }
+
+    // Listen for scroll events to trigger the animations
+    window.addEventListener('scroll', revealOnScroll);
+
+    // Initial check to trigger the animations on page load
+    revealOnScroll();
+  </script>
+  
   
 </body>
 </html>
