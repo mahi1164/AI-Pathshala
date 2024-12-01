@@ -13,7 +13,7 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: url("Background.gif") no-repeat center center fixed;
+  background: url("Background.png") no-repeat center center fixed;
   background-size: cover;
   font-family: Arial, sans-serif;
 }
@@ -286,10 +286,10 @@ body, html {
       border-width: thick;
 
       height: 97%;
-      background: url("Background.gif") no-repeat center center fixed;
+      background: url("Background.png") no-repeat center center fixed;
   background-size: cover;
       border-radius: 30px;
-      border-style: solid;
+      border-style: ridge;
       box-shadow: 0 4px 10px rgb(255, 255, 255);
       padding: 20px;
       box-sizing: border-box;
@@ -398,7 +398,7 @@ body, html {
 }
 
 .program-card {
-  background: url("Background.gif") no-repeat center center fixed;
+  background: url("Background.png") no-repeat center center fixed;
   background-size: cover;
   border-radius: 12px;
   padding: 25px;
@@ -413,6 +413,13 @@ body, html {
   opacity: 1;
   transform: translateY(0);
 }
+
+.program-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+
 
 .program-card h3 {
   font-size: 1.5rem;
@@ -555,6 +562,90 @@ body, html {
     }
 
   </style>
+  <style>
+    /* Mentors Section Styling */
+    .mentors-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+  
+    .mentors-section h2 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+  
+    .mentors-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  
+    .mentor-card {
+      width: 300px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .mentor-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+  
+    .mentor-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .mentor-info {
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .mentor-info h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+  
+    .mentor-info p {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 15px;
+    }
+  
+    .mentor-info button {
+      padding: 8px 16px;
+      background-color: #6c5ce7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+  
+    .mentor-info button:hover {
+      background-color: #4834d4;
+      transform: scale(1.05);
+    }
+  
+    .mentor-bio {
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #555;
+      display: none;
+    }
+  
+    .mentor-bio.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -639,20 +730,72 @@ body, html {
 
   <div class="programs-container">
     <div class="program-card">
+      <div class="program-card">
+        <img src="AiStudents.jpg" alt="AI for Students Image">
       <h3>AI for Students</h3>
       <p>Hands-on AI workshops for school and college students to ignite creativity and problem-solving skills.</p>
     </div>
     <div class="program-card">
+      <div class="program-card">
+        <img src="AiEducators.jpg" alt="AI for Students Image">
       <h3>AI for Educators</h3>
       <p>Comprehensive training sessions for teachers to integrate AI tools and methodologies into their teaching practices.</p>
     </div>
     <div class="program-card">
+      <div class="program-card">
+        <img src="AiClub.png" alt="AI for Students Image">
       <h3>AI Club</h3>
       <p>AI Clubs will be created at the school level, where nodal teachers are appointed to train students on the use of AI.</p>
     </div>
     <div class="program-card">
+      <div class="program-card">
+        <img src="AiLabs.png" alt="AI for Students Image">
       <h3>AI Labs</h3>
       <p>Coming Soon</p>
+    </div>
+  </div>
+</section>
+<!-- Mentors Section -->
+<section id="mentors" class="mentors-section">
+  <h2>Our Mentors</h2>
+  <div class="mentors-container">
+    <!-- Mentor Card 1 -->
+    <div class="mentor-card">
+      <div class="mentor-image" style="background-image: url('AiResearcher.png');"></div>
+      <div class="mentor-info">
+        <h3>Dr. Aditi Sharma</h3>
+        <p>AI Research Specialist</p>
+        <button onclick="showBio(1)">View Bio</button>
+      </div>
+      <div id="bio-1" class="mentor-bio hidden">
+        <p>Dr. Aditi Sharma has over 10 years of experience in Artificial Intelligence and Machine Learning. She is passionate about empowering students through AI education.</p>
+      </div>
+    </div>
+
+    <!-- Mentor Card 2 -->
+    <div class="mentor-card">
+      <div class="mentor-image" style="background-image: url('Untitled\ design.png');"></div>
+      <div class="mentor-info">
+        <h3>Mr. Rahul Verma</h3>
+        <p>Data Science Expert</p>
+        <button onclick="showBio(2)">View Bio</button>
+      </div>
+      <div id="bio-2" class="mentor-bio hidden">
+        <p>Mr. Rahul Verma specializes in data-driven problem-solving and has worked on numerous real-world projects in AI and data science.</p>
+      </div>
+    </div>
+
+    <!-- Mentor Card 3 -->
+    <div class="mentor-card">
+      <div class="mentor-image" style="background-image: url('EdtechInnovator.png');"></div>
+      <div class="mentor-info">
+        <h3>Ms. Priya Kapoor</h3>
+        <p>EdTech Innovator</p>
+        <button onclick="showBio(3)">View Bio</button>
+      </div>
+      <div id="bio-3" class="mentor-bio hidden">
+        <p>Ms. Priya Kapoor is an EdTech innovator and AI evangelist, focused on integrating AI tools in education to maximize student learning outcomes.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -784,6 +927,17 @@ body, html {
 
     // Initial check to trigger the animations on page load
     revealOnScroll();
+  </script>
+  <script>
+    // Show or hide mentor bios
+    function showBio(id) {
+      const bio = document.getElementById(`bio-${id}`);
+      if (bio.classList.contains("hidden")) {
+        bio.classList.remove("hidden");
+      } else {
+        bio.classList.add("hidden");
+      }
+    }
   </script>
   <script>
     // Function to detect if an element is in view
