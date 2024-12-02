@@ -240,27 +240,29 @@ body, html {
       color: #fff;
     }
 
-    @media (max-width: 700px) {
-      .main {
-        flex-direction: column;
-        text-align: center;
-      }
+    @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
 
-      .main .content h1 {
-        font-size: 2.5rem;
-      }
+  .container {
+    padding: 10px;
+  }
 
-      .partner-logos img {
-        max-width: 70px;
-      }
-      .about-us-section{
-        font-size: 2rem;
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+  }
 
-      }
-      .contact-us-details{
-        max-width: fit-content;
-      }
-    }
+  .content {
+    padding: 5px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
     /* About Us Section */
     .about-us-section {
       padding: 60px 20px;
