@@ -6,14 +6,19 @@
   <title>Contact Us - AI Pathshala Jashpur</title>
   <style>
     /* General Styles */
-    
-    /* Body Styles */
-    body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
   font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
               url("Background.png") center/cover no-repeat fixed;
   color: #ffffff;
+  line-height: 1.6;
 }
 
 /* Fade-In Animation for GIF */
@@ -28,133 +33,172 @@
   }
 }
 
-    /* Header */
-    header {
-      background-color: #9e5fad;
-      color: #fff;
-      padding: 10px 20px;
-      font-size: 1.8rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-align: center;
-    }
+/* Header */
+header {
+  background-color: rgba(158, 95, 173, 0.9);
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-    /* Main Content */
-    .content {
-      max-width: 700px;
-      margin: 50px auto;
-      padding: 20px;
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
+/* Main Content */
+.content {
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
 
-    .content h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      animation: fadeInDown 1s ease-in-out;
-    }
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: fadeInDown 1s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-    .content p {
-      font-size: 1.2rem;
-      margin: 10px 0;
-    }
+.content p {
+  font-size: 1rem;
+  margin: 15px 0;
+}
 
-    .contact-info {
-      margin: 20px 0;
-      animation: slideInUp 1s ease-in-out;
-    }
+.contact-info {
+  margin: 30px 0;
+  animation: slideInUp 1s ease-in-out;
+}
 
-    .contact-info p {
-      font-size: 1.1rem;
-      margin: 10px 0;
-      line-height: 1.6;
-    }
+.contact-info p {
+  font-size: 1rem;
+  margin: 15px 0;
+  line-height: 1.8;
+}
 
-    .contact-info p strong {
-      color: #faf9fd;
-    }
+.contact-info p strong {
+  color: #faf9fd;
+  font-weight: 600;
+}
 
-    .contact-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background-color: #9e5fad;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+.contact-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background-color: #9e5fad;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    .contact-btn:hover {
-      background-color: #7e6dcc;
-      transform: scale(1.05);
-    }
+.contact-btn:hover {
+  background-color: #7e6dcc;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
 
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-    /* Footer */
-    footer {
-      background-color: #9e5fad;
-      color: #fff;
-      padding: 15px;
-      font-size: 0.9rem;
-    }
+/* Footer */
+footer {
+  background-color: rgba(158, 95, 173, 0.9);
+  color: #fff;
+  padding: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
 
-    footer a {
-      color: #ffcc80;
-      text-decoration: none;
-      margin: 0 5px;
-      transition: color 0.3s ease;
-    }
+footer a {
+  color: #ffcc80;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
 
-    footer a:hover {
-      color: #fff;
-    }
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .content h1 {
-        font-size: 2rem;
-      }
+/* Responsive Design */
+@media (min-width: 768px) {
+  header {
+    font-size: 1.5rem;
+    padding: 20px;
+  }
 
-      .contact-btn {
-        padding: 10px 20px;
-        font-size: 1rem;
-      }
-    }
+  .content {
+    max-width: 700px;
+    margin: 50px auto;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .content p, .contact-info p {
+    font-size: 1.1rem;
+  }
+
+  .contact-btn {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .content p, .contact-info p {
+    font-size: 1.2rem;
+  }
+
+  .contact-btn {
+    font-size: 1.2rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
