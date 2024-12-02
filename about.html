@@ -5,65 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Pathshala Jashpur</title>
   <style>
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      font-family: 'Poppins', Arial, sans-serif;
-      scroll-behavior: smooth;
-      overflow: hidden;
-    }
-
-    .container {
-      height: 100vh;
-      overflow-y: scroll;
-    }
-
-    .section {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-   /* Background Styling for Each Section with Images */
-.section:nth-child(1) {
-  background: url("Background.png") center/cover no-repeat fixed;
-  
+    body {
+  margin: 0;
+  font-family: sans-serif;
 }
 
-.section:nth-child(2) {
-  background: url("Background.png") center/cover no-repeat fixed; 
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
-.section:nth-child(3) {
-  background: url("Background.png") center/cover no-repeat fixed;  
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("Background.png") center/cover no-repeat;
+  background-attachment: scroll;
 }
 
+.section:nth-child(1),
+.section:nth-child(2),
+.section:nth-child(3),
 .section:nth-child(4) {
-  background: url("Background.png") center/cover no-repeat fixed;  
+  background: url("Background.png") center/cover no-repeat;
+  background-attachment: scroll;
 }
 
-/* Shared Animation for Smooth Fading */
+@media screen and (min-width: 769px) {
+  .section:nth-child(1),
+  .section:nth-child(2),
+  .section:nth-child(3),
+  .section:nth-child(4) {
+    background-attachment: fixed;
+  }
+}
+
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hidden-text {
+  padding: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.hidden-text.show {
+  max-height: 300px;
+}
+
 @keyframes fadeInBg {
   0% {
     opacity: 0;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   100% {
     opacity: 1;
@@ -71,54 +87,63 @@
   }
 }
 
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      line-height: 1.8;
-      margin-left: 6ch;
-      margin-right: 6ch;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 1.2rem;
-      background-color: #fff;
-      color: #333;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #333;
-      color: #fff;
-      transform: scale(1.1);
-    }
-
-    .hidden-text {
-      display: none;
-      margin-top: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 8px;
-      transition: max-height 0.5s ease-in-out, opacity 0.5s ease;
-      max-height: 0;
-      overflow: hidden;
+@media screen and (max-width: 768px) {
+  @keyframes fadeInBg {
+    0% {
       opacity: 0;
     }
-
-    .hidden-text.show {
-      display: block;
-      max-height: 200px;
+    100% {
       opacity: 1;
     }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-left: 2ch;
+    margin-right: 2ch;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .hidden-text {
+    padding: 10px;
+  }
+
+  .hidden-text.show {
+    max-height: 300px;
+  }
+
+  .section {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin-left: 1ch;
+    margin-right: 1ch;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
   </style>
 </head>
 <body>
