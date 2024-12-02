@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Pathshala Jashpur</title>
   <style>
-    body {
+    /* Global Styles */
+* {
   margin: 0;
-  font-family: sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Poppins', Arial, sans-serif;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  color: white;
 }
 
 .container {
@@ -18,14 +27,26 @@
 }
 
 .section {
+  position: relative;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("Background.png") center/cover no-repeat;
-  background-attachment: scroll;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  padding: 20px;
 }
 
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background Styling for Each Section with Images */
 .section:nth-child(1),
 .section:nth-child(2),
 .section:nth-child(3),
@@ -43,39 +64,7 @@
   }
 }
 
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-button {
-  font-size: 1.2rem;
-  padding: 12px 24px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.hidden-text {
-  padding: 20px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-out;
-}
-
-.hidden-text.show {
-  max-height: 300px;
-}
-
+/* Shared Animation for Smooth Fading */
 @keyframes fadeInBg {
   0% {
     opacity: 0;
@@ -87,17 +76,52 @@ button {
   }
 }
 
-@media screen and (max-width: 768px) {
-  @keyframes fadeInBg {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
+p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  max-width: 80%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.hidden-text {
+  display: none;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  max-width: 80%;
+}
+
+.hidden-text.show {
+  display: block;
+  max-height: 200px;
+  opacity: 1;
+}
 
 @media screen and (max-width: 768px) {
   h1 {
@@ -106,8 +130,6 @@ button {
 
   p {
     font-size: 1rem;
-    margin-left: 2ch;
-    margin-right: 2ch;
   }
 
   button {
@@ -123,8 +145,13 @@ button {
     max-height: 300px;
   }
 
-  .section {
-    padding: 20px;
+  @keyframes fadeInBg {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -135,8 +162,6 @@ button {
 
   p {
     font-size: 0.9rem;
-    margin-left: 1ch;
-    margin-right: 1ch;
   }
 
   button {
@@ -144,6 +169,8 @@ button {
     padding: 6px 12px;
   }
 }
+
+
   </style>
 </head>
 <body>
