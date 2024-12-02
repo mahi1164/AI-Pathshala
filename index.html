@@ -279,113 +279,193 @@ nav .logo {
       }
     }
     /* About Us Section */
-    .about-us-section {
-      padding: 60px 20px;
-      text-align: center;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-      margin-top: 5%;
-      content:justify;
+.about-us-section {
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-top: 5%;
+}
 
-    }
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
 
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
+/* Card Container */
+.card-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
 
-    /* Card Container */
-    .card-container {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-    }
-
-    /* Individual Card Styling */
-    .card {
-      position: absolute;
-      top: 3%;
-      width: 80%;
-      margin-left: 10%;
-      margin-right: 5%;
-      border-width: thick;
-
-      height: 97%;
-      background: url("Background.png") no-repeat center center fixed;
+/* Individual Card Styling */
+.card {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  border-width: 2px;
+  height: auto;
+  min-height: 300px;
+  background: url("Background.png") no-repeat center center;
   background-size: cover;
-      border-radius: 30px;
-      border-style: ridge;
-      box-shadow: 0 4px 10px rgb(255, 255, 255);
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 1.2rem;
-      opacity: 0;
-      transition: all 0.8s ease-in-out;
-    }
+  border-radius: 15px;
+  border-style: ridge;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  opacity: 1;
+  transition: all 0.8s ease-in-out;
+}
 
-    /* Title Style */
-    .card h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
+/* Title Style */
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
 
-    /* Navigation Buttons */
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      font-size: 2rem;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 10;
-    }
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.5rem;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
 
-    .nav-btn.left {
-      left: 10px;
-    }
+.nav-btn.left {
+  left: 5px;
+}
 
-    .nav-btn.right {
-      right: 10px;
-    }
+.nav-btn.right {
+  right: 5px;
+}
 
-    /* Show Active Card */
-    .card.active {
-      left: 0;
-      opacity: 1;
-    }
+/* Show Active Card */
+.card.active {
+  display: flex;
+}
 
-    /* Left-to-Right Fade-Out */
-    .card.fade-out-left {
-      left: -100%;
-      opacity: 0;
-    }
+/* Hide Inactive Cards */
+.card:not(.active) {
+  display: none;
+}
 
-    /* Right-to-Left Fade-Out */
-    .card.fade-out-right {
-      left: 100%;
-      opacity: 0;
-    }
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    /* Left-to-Right Fade-In */
-    .card.fade-in-left {
-      left: 0;
-      opacity: 1;
-    }
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
 
-    /* Right-to-Left Fade-In */
-    .card.fade-in-right {
-      left: 0;
-      opacity: 1;
-    }
+.card.fade-in-left,
+.card.fade-in-right {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.card.fade-out-left,
+.card.fade-out-right {
+  animation: fadeOut 0.8s ease-in-out forwards;
+}
+
+/* Media Queries for Larger Screens */
+@media screen and (min-width: 768px) {
+  .about-us-section {
+    padding: 60px 20px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .card-container {
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .card {
+    position: absolute;
+    top: 3%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 97%;
+    font-size: 1.2rem;
+    opacity: 0;
+  }
+
+  .card h3 {
+    font-size: 2rem;
+  }
+
+  .nav-btn {
+    font-size: 2rem;
+    padding: 10px;
+  }
+
+  .nav-btn.left {
+    left: 10px;
+  }
+
+  .nav-btn.right {
+    right: 10px;
+  }
+
+  /* Show Active Card */
+  .card.active {
+    left: 0;
+    opacity: 1;
+    display: flex;
+  }
+
+  /* Left-to-Right Fade-Out */
+  .card.fade-out-left {
+    left: -100%;
+    opacity: 0;
+  }
+
+  /* Right-to-Left Fade-Out */
+  .card.fade-out-right {
+    left: 100%;
+    opacity: 0;
+  }
+
+  /* Left-to-Right Fade-In */
+  .card.fade-in-left {
+    left: 0;
+    opacity: 1;
+  }
+
+  /* Right-to-Left Fade-In */
+  .card.fade-in-right {
+    left: 0;
+    opacity: 1;
+  }
+
+  /* Hide Inactive Cards */
+  .card:not(.active) {
+    display: flex;
+  }
+}
+
+
 /* Our Programs Section Styling */
 .programs-section {
   padding: 60px 20px;
