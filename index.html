@@ -102,6 +102,31 @@ nav .logo {
   color: white;
   cursor: pointer;
   display: block;
+  z-index: 1000;
+}
+
+/* Styling the nav-links for mobile */
+.nav-links {
+  position: absolute;
+  top: 60px; /* Adjust based on navbar height */
+  right: 0;
+  width: 100%;
+  background-color: #4a148c; /* Same as navbar */
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links a {
+  padding: 10px 15px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links.show {
+  display: flex; /* Show dropdown when toggled */
 }
 
 /* Media Query for Desktop */
@@ -113,7 +138,6 @@ nav .logo {
     display: flex;
     flex-direction: row;
     position: static;
-    -ms-grid-layer: initial;
     width: auto;
     background: none;
     box-shadow: none;
@@ -123,7 +147,6 @@ nav .logo {
     padding: 0 10px;
   }
 }
-
    
     /* Partner Section */
     .partner-header {
