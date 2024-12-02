@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>AI Pathshala</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <style>
@@ -125,6 +124,49 @@ body, html {
       transform: scale(1.1);
     }
 
+    /* Responsive Navigation Bar */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  nav .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    display: none; /* Hidden by default */
+    width: 100%;
+    background-color: #4a148c;
+  }
+
+  nav .nav-links.show {
+    display: flex; /* Show on toggle */
+  }
+
+  nav .nav-links a {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav .menu-icon {
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+/* Default Menu Icon Hidden */
+nav .menu-icon {
+  display: none;
+}
+
+
     /* Partner Section */
     .partner-header {
       display: flex;
@@ -241,28 +283,19 @@ body, html {
     }
 
     @media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
+      .main {
+        flex-direction: column;
+        text-align: center;
+      }
 
-  .container {
-    padding: 10px;
-  }
+      .main .content h1 {
+        font-size: 2.5rem;
+      }
 
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .content {
-    padding: 5px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
+      .partner-logos img {
+        max-width: 70px;
+      }
+    }
     /* About Us Section */
     .about-us-section {
       padding: 60px 20px;
@@ -369,6 +402,40 @@ body, html {
       left: 0;
       opacity: 1;
     }
+    /* About Us Section - Responsive Styles */
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 40px 10px;
+    margin-top: 10%;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .card-container {
+    height: auto;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+  }
+
+  .nav-btn {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+}
+
 /* Our Programs Section Styling */
 .programs-section {
   padding: 60px 20px;
@@ -453,7 +520,7 @@ body, html {
 }
 
 /* Responsive Design for smaller screens */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .programs-container {
     flex-direction: column;
     align-items: center;
@@ -549,7 +616,7 @@ body, html {
       }
     }
      /* Responsive Design */
-     @media (max-width: 700px) {
+     @media (max-width: 768px) {
       .content h1 {
         font-size: 2rem;
       }
@@ -561,9 +628,10 @@ body, html {
     }
 
     /* Responsive Design */
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .contact-us-section {
         padding: 40px 20px;
+        max-width: 100%;
       }
 
       .contact-us-details {
@@ -581,7 +649,7 @@ body, html {
   
     .mentors-section h2 {
       font-size: 2.5rem;
-      color: #ffffff;
+      color: #4a148c;
       margin-bottom: 40px;
     }
   
@@ -658,16 +726,17 @@ body, html {
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
   <nav>
     <a href="#" class="logo">AI Pathshala</a>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="nav-links">
-      <a href="about.html">About Us</a>
-      <a href="https://forms.gle/9K6MYxxqn54cEYCN9" target="_blank">Join Us</a>
-      <a href="events.html">Events</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
     </div>
   </nav>
+  
 
   <!-- Partner Section -->
   <section class="partner-header">
@@ -867,6 +936,12 @@ body, html {
       direction: 'alternate',
       loop: true,
     });
+  </script>
+  <script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+  }
   </script>
      <script>
       let currentIndex = 0;
