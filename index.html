@@ -116,6 +116,7 @@ nav .logo {
   flex-direction: column;
   padding: 10px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999; /* Places the dropdown above other sections */
 }
 
 .nav-links a {
@@ -142,6 +143,7 @@ nav .logo {
     background: none;
     box-shadow: none;
     padding: 0;
+    z-index: auto; /* Default z-index for desktop */
   }
   .nav-links a {
     padding: 0 10px;
